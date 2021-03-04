@@ -35,6 +35,46 @@ namespace Lab1
             _count++;
         }
         
+        public void AddItem(T item)
+        {
+            if (IsEmpty()) // in case a list is empty
+            {
+                AddToEnd(item);
+                return;
+            }
+            
+            if (_headNode.Data.CompareTo(item) > 0) // in case all nodes are larger than the item to add
+            {
+                _headNode = new Node<T>(item)
+                {
+                    Next = _headNode
+                };
+                _count++;
+                return;
+            }
+            
+            Node<T> currentNode = _headNode;
+
+            while (currentNode != null) // here we are looking for a place to add a new node and add it
+            {
+                if (currentNode.Next != null && item.CompareTo(currentNode.Next.Data) < 0)
+                {
+                    Node<T> nodeToAdd = new Node<T>(item);
+                    nodeToAdd.Next = currentNode.Next;
+                    currentNode.Next = nodeToAdd;
+                    _count++;
+                    return;
+                }
+
+                if (currentNode.Next == null)
+                {
+                    AddToEnd(item);
+                    return;
+                }
+                currentNode = currentNode.Next;
+            }
+        }
+        
         public bool DeleteItem(T item)
         {
             // check if the list is empty
@@ -75,44 +115,21 @@ namespace Lab1
             return false;
         }
         
-        public void AddItem(T item)
+        public int Search(T item)
         {
-            if (IsEmpty()) // in case a list is empty
-            {
-                AddToEnd(item);
-                return;
-            }
-            
-            if (_headNode.Data.CompareTo(item) > 0) // in case all nodes are larger than the item to add
-            {
-                _headNode = new Node<T>(item)
-                {
-                    Next = _headNode
-                };
-                _count++;
-                return;
-            }
-            
+            int position = 0;
+
             Node<T> currentNode = _headNode;
-
-            while (currentNode != null) // here we are looking for a place to add a new node and add it
+            while (currentNode != null)
             {
-                if (currentNode.Next != null && item.CompareTo(currentNode.Next.Data) < 0)
+                if (currentNode.Data.CompareTo(item) == 0)
                 {
-                    Node<T> nodeToAdd = new Node<T>(item);
-                    nodeToAdd.Next = currentNode.Next;
-                    currentNode.Next = nodeToAdd;
-                    _count++;
-                    return;
+                    return position;
                 }
-
-                if (currentNode.Next == null)
-                {
-                    AddToEnd(item);
-                    return;
-                }
+                position++;
                 currentNode = currentNode.Next;
             }
+            return -1;
         }
         
         public void PrintList()
