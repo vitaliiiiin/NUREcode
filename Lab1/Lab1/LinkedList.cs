@@ -152,5 +152,23 @@ namespace Lab1
         {
             return _count;
         }
+        
+        public LinkedList<T> Difference(LinkedList<T> list2)
+        {
+            Node<T> currentNode = _headNode;
+
+            LinkedList<T> differenceList = new LinkedList<T>();
+
+            while (currentNode != null)
+            {
+                if (list2.Search(currentNode.Data) == -1)
+                {
+                    differenceList.AddItem(currentNode.Data);
+                }
+
+                currentNode = currentNode.Next;
+            }
+            return differenceList;
+        }
     }
 }
