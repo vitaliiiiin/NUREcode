@@ -9,5 +9,13 @@
             set { _data = value; }
         }
         
+        private Node<T> _next;
+        public Node<T> Next
+        {
+            get { return _next; }
+            set { _next = value; }
+        }
+        
+        
     }
 }
