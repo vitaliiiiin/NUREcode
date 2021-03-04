@@ -1,6 +1,6 @@
 ﻿namespace Lab1
 {
-    public class Node
+    public class Node<T>
     {
         
     }
