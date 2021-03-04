@@ -147,5 +147,10 @@ namespace Lab1
         {
             return _count == 0;
         }
+        
+        public int ListSize()
+        {
+            return _count;
+        }
     }
 }
