@@ -35,6 +35,46 @@ namespace Lab1
             _count++;
         }
         
+        public bool DeleteItem(T item)
+        {
+            // check if the list is empty
+            if (IsEmpty()) return false;
+            
+            // checking if 1st element fits for deleting
+            if (HeadNode.Data.CompareTo(item) == 0)
+            {
+                HeadNode = HeadNode.Next;
+                _count--;
+                
+                return true;
+            }
+            
+            // checking all the others elements
+            Node<T> currentNode = _headNode;
+            while (currentNode.Next.Next != null)
+            {
+                if (currentNode.Next.Data.CompareTo(item) == 0)
+                {
+                    currentNode.Next = new Node<T>(currentNode.Next.Next);
+                    _count--;
+                    
+                    return true;
+                }
+                currentNode = currentNode.Next;
+            }
+            
+            // checking if the last node is to delete and if so delete it
+            if (currentNode.Next.Data.CompareTo(item) == 0)
+            {
+                currentNode.Next = null;
+                _count--;
+
+                return true;
+            }
+            
+            return false;
+        }
+        
         public void AddItem(T item)
         {
             if (IsEmpty()) // in case a list is empty
