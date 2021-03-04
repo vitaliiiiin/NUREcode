@@ -36,5 +36,10 @@ namespace Lab1
         }
         
         
+        
+        public bool IsEmpty()
+        {
+            return _count == 0;
+        }
     }
 }
