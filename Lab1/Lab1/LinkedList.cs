@@ -6,7 +6,6 @@ namespace Lab1
     {
         private Node<T> _headNode;
         private int _count;
-
         private Node<T> HeadNode
         {
             get { return _headNode; }
@@ -17,5 +16,25 @@ namespace Lab1
             _headNode = null;
             _count = 0;
         }
+        
+        private void AddToEnd(T item)
+        {
+            Node<T> currentNode = _headNode;
+            if (currentNode != null)
+            {
+                while (currentNode.Next != null)
+                {
+                    currentNode = currentNode.Next;
+                }
+                currentNode.Next = new Node<T>(item);
+            }
+            else
+            {
+                _headNode = new Node<T>(item);
+            }
+            _count++;
+        }
+        
+        
     }
 }
