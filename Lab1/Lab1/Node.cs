@@ -21,5 +21,11 @@
             Data = data;
             Next = null;
         }
+        
+        public Node(Node<T> node)
+        {
+            Data = node.Data;
+            Next = node.Next;
+        }
     }
 }
