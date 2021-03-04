@@ -12,6 +12,10 @@ namespace Lab1
             get { return _headNode; }
             set { _headNode = value; }
         }
-
+        public LinkedList()
+        {
+            _headNode = null;
+            _count = 0;
+        }
     }
 }
