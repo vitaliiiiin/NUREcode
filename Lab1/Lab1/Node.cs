@@ -16,6 +16,10 @@
             set { _next = value; }
         }
         
-        
+        public Node(T data)
+        {
+            Data = data;
+            Next = null;
+        }
     }
 }
