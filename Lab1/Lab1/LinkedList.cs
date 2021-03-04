@@ -35,7 +35,16 @@ namespace Lab1
             _count++;
         }
         
-        
+        public void PrintList()
+        {
+            Node<T> currentNode = HeadNode;
+
+            while (currentNode != null)
+            {
+                Console.Write(currentNode.Data + " ");
+                currentNode = currentNode.Next;
+            }
+        }
         
         public bool IsEmpty()
         {
