@@ -25,10 +25,23 @@ namespace Lab1
 
             list2.AddItem(1);
             list2.AddItem(0);
+            list2.AddItem(3);
+            list2.AddItem(2);
             list2.AddItem(0);
 
-            
             list2.PrintList();
+            Console.WriteLine();
+            list2.DeleteItem(0);
+            list2.PrintList();
+
+            Console.WriteLine();
+            Console.WriteLine(list2.Search(1));
+            Console.WriteLine();
+
+
+            LinkedList<string> list3 = new LinkedList<string>();
+
+            
             
             Console.ReadLine();
         }
