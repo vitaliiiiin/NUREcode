@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections;
 
 namespace Lab1
 {
-    public class LinkedList<T> where T : IComparable
+    public class LinkedList<T> : IComparer
     {
         private Node<T> _headNode;
         private int _count;
@@ -16,7 +17,18 @@ namespace Lab1
             _headNode = null;
             _count = 0;
         }
-        
+
+        int IComparer.Compare(object a, object b)
+        {
+            if (a.GetHashCode() > b.GetHashCode())
+                return 1;
+            
+            if (a.GetHashCode() < b.GetHashCode())
+                return -1;
+            
+            return 0;
+        }
+
         private void AddToEnd(T item)
         {
             Node<T> currentNode = _headNode;
@@ -43,7 +55,7 @@ namespace Lab1
                 return;
             }
             
-            if (_headNode.Data.CompareTo(item) > 0) // in case all nodes are larger than the item to add
+            if (((IComparer) this).Compare(_headNode.Data, item) > 0) // in case all nodes are larger than the item to add
             {
                 _headNode = new Node<T>(item)
                 {
@@ -57,7 +69,7 @@ namespace Lab1
 
             while (currentNode != null) // here we are looking for a place to add a new node and add it
             {
-                if (currentNode.Next != null && item.CompareTo(currentNode.Next.Data) < 0)
+                if (currentNode.Next != null && ((IComparer) this).Compare(item, currentNode.Next.Data) < 0)
                 {
                     Node<T> nodeToAdd = new Node<T>(item);
                     nodeToAdd.Next = currentNode.Next;
@@ -77,11 +89,11 @@ namespace Lab1
         
         public bool DeleteItem(T item)
         {
-            // check if the list is empty
+            // check if a list is empty
             if (IsEmpty()) return false;
             
             // checking if 1st element fits for deleting
-            if (HeadNode.Data.CompareTo(item) == 0)
+            if (((IComparer) this).Compare(HeadNode.Data, item) == 0)
             {
                 HeadNode = HeadNode.Next;
                 _count--;
@@ -93,7 +105,7 @@ namespace Lab1
             Node<T> currentNode = _headNode;
             while (currentNode.Next.Next != null)
             {
-                if (currentNode.Next.Data.CompareTo(item) == 0)
+                if (((IComparer) this).Compare(currentNode.Next.Data, item) == 0)
                 {
                     currentNode.Next = new Node<T>(currentNode.Next.Next);
                     _count--;
@@ -104,7 +116,7 @@ namespace Lab1
             }
             
             // checking if the last node is to delete and if so delete it
-            if (currentNode.Next.Data.CompareTo(item) == 0)
+            if (((IComparer) this).Compare(currentNode.Next.Data, item) == 0)
             {
                 currentNode.Next = null;
                 _count--;
@@ -122,7 +134,7 @@ namespace Lab1
             Node<T> currentNode = _headNode;
             while (currentNode != null)
             {
-                if (currentNode.Data.CompareTo(item) == 0)
+                if (((IComparer) this).Compare(currentNode.Data, item) == 0)
                 {
                     return position;
                 }
