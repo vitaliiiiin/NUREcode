@@ -1,0 +1,16 @@
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\bin\Debug\net5.0\Lab1.exe
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\bin\Debug\net5.0\Lab1.deps.json
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\bin\Debug\net5.0\Lab1.runtimeconfig.json
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\bin\Debug\net5.0\Lab1.runtimeconfig.dev.json
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\bin\Debug\net5.0\Lab1.dll
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\bin\Debug\net5.0\ref\Lab1.dll
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\bin\Debug\net5.0\Lab1.pdb
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\obj\Debug\net5.0\Lab1.csprojAssemblyReference.cache
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\obj\Debug\net5.0\Lab1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\obj\Debug\net5.0\Lab1.AssemblyInfoInputs.cache
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\obj\Debug\net5.0\Lab1.AssemblyInfo.cs
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\obj\Debug\net5.0\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\obj\Debug\net5.0\Lab1.dll
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\obj\Debug\net5.0\ref\Lab1.dll
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\obj\Debug\net5.0\Lab1.pdb
+C:\Users\Vitalii_N\Desktop\NUREcode\Lab1\Lab1\obj\Debug\net5.0\Lab1.genruntimeconfig.cache
