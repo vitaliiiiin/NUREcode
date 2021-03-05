@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections;
 
 namespace Lab1
 {
-    public class LinkedList<T> where T : IComparable
+    public class LinkedList<T> : IComparer
     {
         private Node<T> _headNode;
         private int _count;
@@ -16,7 +17,18 @@ namespace Lab1
             _headNode = null;
             _count = 0;
         }
-        
+
+        int IComparer.Compare(object a, object b)
+        {
+            if (a.GetHashCode() > b.GetHashCode())
+                return 1;
+            
+            if (a.GetHashCode() < b.GetHashCode())
+                return -1;
+            
+            return 0;
+        }
+
         private void AddToEnd(T item)
         {
             Node<T> currentNode = _headNode;
@@ -77,7 +89,7 @@ namespace Lab1
         
         public bool DeleteItem(T item)
         {
-            // check if the list is empty
+            // check if a list is empty
             if (IsEmpty()) return false;
             
             // checking if 1st element fits for deleting
