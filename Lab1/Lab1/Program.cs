@@ -7,18 +7,18 @@ namespace Lab1
         static void Main(string[] args)
         {
             LinkedList<object> listTest = new LinkedList<object>();
-
+            
             object i = 0;
             listTest.AddItem(i);
-
-            object b = "wee wee";
+            
+            object b = 5;
             listTest.AddItem(b);
-
+            
             object c = 2;
             listTest.AddItem(c);
             
             listTest.PrintList();
-
+            
             Console.WriteLine("\n");
 
             LinkedList<int> list2 = new LinkedList<int>();
@@ -40,8 +40,6 @@ namespace Lab1
 
 
             LinkedList<string> list3 = new LinkedList<string>();
-
-            
             
             Console.ReadLine();
         }
