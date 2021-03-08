@@ -54,6 +54,53 @@ namespace Lab1
             Console.WriteLine("is the list empty? " + listInts.IsEmpty());
             
             Console.WriteLine("\n=================");
+            //creating a new list of strings
+            LinkedList<string> listStrings = new LinkedList<string>();
+            
+            //adding new nodes into the list
+            Console.WriteLine("after adding new nodes into the empty list");
+            listStrings.AddItem("z");
+            listStrings.AddItem("k");
+            listStrings.AddItem("k");
+            listStrings.AddItem("abc");
+            listStrings.AddItem("c");
+            listStrings.AddItem("test");
+            listStrings.AddItem("a");
+            
+            //printing the list and its size
+            listStrings.PrintList();
+            Console.WriteLine("\nits size: " + listStrings.ListSize());
+
+            Console.WriteLine();
+            
+            //deleting items from the list
+            listStrings.DeleteItem("k");
+            listStrings.DeleteItem("test");
+            listStrings.DeleteItem("w");
+
+            //printing the list and its size
+            listStrings.PrintList();
+            Console.WriteLine("\nits size: " + listStrings.ListSize());
+
+            Console.WriteLine();
+
+            //searching an item in the list
+            Console.WriteLine("searching an item in the list");
+            string itemToFindStr = "k";
+            Console.WriteLine(itemToFindStr + ": " + listStrings.Search(itemToFindStr));
+            itemToFindStr = "a";
+            Console.WriteLine(itemToFindStr + ": " + listStrings.Search(itemToFindStr));
+            itemToFindStr = "c";
+            Console.WriteLine(itemToFindStr + ": " + listStrings.Search(itemToFindStr));
+            itemToFindStr = "abc";
+            Console.WriteLine(itemToFindStr + ": " + listStrings.Search(itemToFindStr));
+
+            Console.WriteLine();
+            
+            //checking if the list is empty
+            Console.WriteLine("is the list empty? " + listStrings.IsEmpty());
+
+            Console.WriteLine("\n=================");
             
             //creating a new list of objects
             LinkedList<object> listObjects = new LinkedList<object>();
