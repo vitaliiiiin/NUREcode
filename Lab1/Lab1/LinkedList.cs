@@ -8,11 +8,6 @@ namespace Lab1
     {
         private Node<T> _headNode;
         private int _count;
-        private Node<T> HeadNode
-        {
-            get { return _headNode; }
-            set { _headNode = value; }
-        }
         public LinkedList()
         {
             _headNode = null;
@@ -84,13 +79,13 @@ namespace Lab1
         
         public bool DeleteItem(T item)
         {
-            // check if a list is empty
+            // checking if a list is empty
             if (IsEmpty()) return false;
             
             // checking if 1st element fits for deleting
-            if (Compare(HeadNode.Data, item) == 0)
+            if (Compare(_headNode.Data, item) == 0)
             {
-                HeadNode = HeadNode.Next;
+                _headNode = _headNode.Next;
                 _count--;
                 
                 return true;
@@ -141,7 +136,7 @@ namespace Lab1
         
         public void PrintList()
         {
-            Node<T> currentNode = HeadNode;
+            Node<T> currentNode = _headNode;
 
             while (currentNode != null)
             {
